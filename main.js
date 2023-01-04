@@ -103,7 +103,7 @@ function dragString(s) {
 
   s.y_t1[Math.round(s.N * x_str)] = y_str;
 }
-
+// mouse
 addEventListener("mousemove", (e) => {
   mouseX = e.clientX;
   mouseY = e.clientY;
@@ -116,6 +116,20 @@ addEventListener("mousedown", (e) => {
 addEventListener("mouseup", (e) => {
   isDragging = false;
 });
+//touch
+addEventListener("touchmove", (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+
+addEventListener("touchstart", (e) => {
+  isDragging = true;
+});
+
+addEventListener("touchstartend", (e) => {
+  isDragging = false;
+});
+
 
 addEventListener("resize", () => setSize());
 function setSize() {
