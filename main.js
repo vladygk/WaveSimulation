@@ -126,7 +126,7 @@ addEventListener("touchstart", (e) => {
   isDragging = true;
 });
 
-addEventListener("touchstartend", (e) => {
+addEventListener("touchend", (e) => {
   isDragging = false;
 });
 
