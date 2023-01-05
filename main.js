@@ -38,10 +38,10 @@ class String {
   }
   move(draw) {
     //Boundary Conditions
-    this.y_t2[0] = this.y_t1[0];
-    this.y_t2[1] = this.y_t1[1];
-    this.y_t2[this.N - 2] = this.y_t1[this.N - 2];
-    this.y_t2[this.N - 1] = this.y_t1[this.N - 1];
+    this.y_t2[0] = 0;//this.y_t1[0];
+    this.y_t2[1] = 0;
+    this.y_t2[this.N - 2] = 0;
+    this.y_t2[this.N - 1] = 0;
 
     for (let i = 2; i < this.y_t1.length - 2; i++) {
       this.y_t2[i] = update(
@@ -107,6 +107,8 @@ function dragString(s) {
 addEventListener("mousemove", (e) => {
   mouseX = e.clientX;
   mouseY = e.clientY;
+
+  console.log(mouseY);
 });
 
 addEventListener("mousedown", (e) => {
@@ -120,6 +122,8 @@ addEventListener("mouseup", (e) => {
 addEventListener("touchmove", (e) => {
   mouseX = e.clientX;
   mouseY = e.clientY;
+
+  console.log(mouseY);
 });
 
 addEventListener("touchstart", (e) => {
