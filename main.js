@@ -38,7 +38,7 @@ class String {
   }
   move(draw) {
     //Boundary Conditions
-    this.y_t2[0] = 0;//this.y_t1[0];
+    this.y_t2[0] = 0;
     this.y_t2[1] = 0;
     this.y_t2[this.N - 2] = 0;
     this.y_t2[this.N - 1] = 0;
@@ -60,6 +60,8 @@ class String {
     }
     this.y_t0 = structuredClone(this.y_t1);
     this.y_t1 = structuredClone(this.y_t2);
+
+    console.log(this.y_t2[0]);
   }
 }
 const colours = ["red", "#78CA20", "blue"];
@@ -108,7 +110,7 @@ addEventListener("mousemove", (e) => {
   mouseX = e.clientX;
   mouseY = e.clientY;
 
-  console.log(mouseY);
+ 
 });
 
 addEventListener("mousedown", (e) => {
@@ -123,7 +125,7 @@ addEventListener("touchmove", (e) => {
   mouseX = e.clientX;
   mouseY = e.clientY;
 
-  console.log(mouseY);
+ 
 });
 
 addEventListener("touchstart", (e) => {
@@ -155,6 +157,9 @@ function anim() {
 }
 
 let s = new String(250);
-
+s.y_t2[0]=0;
+s.y_t2[1]=0;
+s.y_t2[s.N-1]=0;
+s.y_t2[s.N-2]=0;
 setSize();
 anim();
