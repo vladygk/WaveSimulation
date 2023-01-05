@@ -157,9 +157,6 @@ function anim() {
 }
 
 let s = new String(250);
-s.y_t2[0]=0;
-s.y_t2[1]=0;
-s.y_t2[s.N-1]=0;
-s.y_t2[s.N-2]=0;
+
 setSize();
 anim();
